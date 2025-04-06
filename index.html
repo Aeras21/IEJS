@@ -73,7 +73,6 @@
         }
 
         .option img {
-            width: 200px;
             height: auto;
             max-width: 100%;
         }
@@ -1866,8 +1865,9 @@
         const img = document.createElement("img");
         img.src = option.img;
         img.alt = "Opción de imagen";
-        img.width = option.width || 200;
-        img.height = option.height || "auto";
+        if (option.width) img.style.width = option.width + "px";
+		if (option.height) img.style.height = option.height + "px";
+
         label.appendChild(img);
     }
 
